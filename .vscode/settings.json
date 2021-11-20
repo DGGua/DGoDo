@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "DGoDo",
+            "database": "DGoDo",
+            "username": "root",
+            "password": "1id0ud0u!"
+        }
+    ]
+}
