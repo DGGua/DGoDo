@@ -120,3 +120,6 @@ dist
 
 # configfile
 config.json
+
+# buildfile
+build/
