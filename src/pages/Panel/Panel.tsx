@@ -13,15 +13,13 @@ export function Panel(props: any) {
             {[0, 1, 2].map(
                 (index) => {
                     return <li
-                        id={props.checkout == index ? "checked" : ""}
+                        id={props.checkout === index ? "checked" : ""}
                         onClick={() => { props.setCheckout(index) }}
                     >
                         {list[index]}
                     </li>
                 }
             )}
-
-
         </div >
     )
 }

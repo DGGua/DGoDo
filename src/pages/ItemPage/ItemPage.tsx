@@ -25,7 +25,7 @@ export function ItemPage() {
                                     {
                                         week.map(day => {
                                             return (
-                                                <td id={day.month() == dayjs().month() ? "" : "notsamemonth"}>
+                                                <td id={day.month() === dayjs().month() ? "" : "notsamemonth"}>
                                                     {day.date()}
                                                 </td>
                                             )
