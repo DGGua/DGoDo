@@ -1,3 +1,3 @@
-export function ItemPage() {
+export function MainPage() {
     return <>mainpage</>
 }
