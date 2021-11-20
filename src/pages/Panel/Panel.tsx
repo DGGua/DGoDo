@@ -4,6 +4,11 @@ export function Panel(props: any) {
 
     return (
         <div className="div-panel">
+            <div className="hiuser">
+                {/* <img src={nihao } alt></img> */}
+                <p>Hi，</p>
+                <p>Unier</p>
+            </div>
 
             {[0, 1, 2].map(
                 (index) => {
