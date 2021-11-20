@@ -1,12 +1,13 @@
 import './Panel.scss'
+import triangle from "../../static/triangle.svg"
 const list = ["主页", "DDL", "日程"]
 export function Panel(props: any) {
 
     return (
         <div className="div-panel">
             <div className="hiuser">
-                {/* <img src={nihao } alt></img> */}
-                <p id="hi">Hi，</p>
+                <img src={triangle}></img>
+                <p id="hi">Hi,</p>
                 <p id="username">Unier</p>
             </div>
             <ul className="choice">
