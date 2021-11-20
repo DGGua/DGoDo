@@ -1,0 +1,27 @@
+.div-main {
+    height: 100%;
+    width: 100%;
+    padding-left: 100px;
+    padding-top: 100px;
+    .header {
+        #eng {
+            margin: 0;
+            text-align: left;
+            font-size: 54px;
+            font-family: Algerian;
+            font-weight: 400;
+            font-style: italic;
+            color: #201f1f;
+        }
+        #chi {
+            margin: 0;
+            text-align: left;
+            font-size: 34px;
+            font-family: PingFang SC;
+            font-weight: 400;
+            font-style: italic;
+            color: #46e8ca;
+            margin-top: -40px;
+        }
+    }
+}
