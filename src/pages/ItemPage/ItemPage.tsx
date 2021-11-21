@@ -1,42 +1,68 @@
 import dayjs from "dayjs";
+import AddItem from "../../components/AddItem";
 import generateCalendar from "../../util/generrateCalendar"
-
+import left from "../../static/leftarrow.svg"
+import right from "../../static/rightarrow.svg"
+import './ItemPage.scss'
 export function ItemPage() {
 
-    const calendar = generateCalendar();
 
     return (
         <div className="div-itempage">
-            <table>
-                <thead>
-                    <tr>
-                        {
-                            ["日", "一", "二", "三", "四", "五", "六"].map((day) => {
-                                return <th scope="col">{day}</th>
-                            })
-                        }
-                    </tr>
-                </thead>
-                <tbody>
+            <Header />
+            <Calendar />
+            <AddItem />
+        </div>
+    )
+}
+
+function Header(props: any) {
+
+    return (
+        <div className="div-header">
+            <img src={left}></img>
+
+            <p>{dayjs().format('MMMM') + "."}</p>
+
+            <img src={right}></img>
+        </div >
+
+    )
+}
+
+function Calendar(props: any) {
+    const calendar = generateCalendar();
+
+    return (
+        <table>
+            <thead>
+                <tr>
                     {
-                        calendar.map(week => {
-                            return (
-                                <tr>
-                                    {
-                                        week.map(day => {
-                                            return (
-                                                <td id={day.month() === dayjs().month() ? "" : "notsamemonth"}>
-                                                    {day.date()}
-                                                </td>
-                                            )
-                                        })
-                                    }
-                                </tr>
-                            )
+                        ["日", "一", "二", "三", "四", "五", "六"].map((day) => {
+                            return <th scope="col">{day}</th>
                         })
                     }
-                </tbody>
-            </table>
-        </div>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    calendar.map(week => {
+                        return (
+                            <tr>
+                                {
+                                    week.map(day => {
+                                        return (
+                                            <td id={day.month() === dayjs().month() ? "" : "notsamemonth"}>
+                                                {day.date()}
+                                            </td>
+                                        )
+                                    })
+                                }
+                            </tr>
+                        )
+                    })
+                }
+            </tbody>
+        </table>
     )
 }
