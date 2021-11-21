@@ -15,8 +15,8 @@ export function DDLPage() {
     return (
         <div className="div-DDL">
             <div className="header">
-                <p>DDL</p>
-                <p>截止时间</p>
+                <p id="eng">DDL</p>
+                <p id="chi">截止时间</p>
             </div>
             <div className="ddls">
                 {ddls.map((ddl) => {
