@@ -1,9 +1,11 @@
 .div-main {
     height: 100%;
     width: 100%;
-    padding-left: 100px;
-    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
     .header {
+        padding-top: 100px;
         #eng {
             margin: 0;
             text-align: left;
@@ -23,5 +25,8 @@
             color: #46e8ca;
             margin-top: -40px;
         }
+    }
+    .ddls {
+        flex-grow: 1;
     }
 }
