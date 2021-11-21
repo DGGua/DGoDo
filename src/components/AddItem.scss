@@ -1,0 +1,22 @@
+.div-additem {
+    margin-top: 1.5em;
+    padding: 0 1em 0 1.5em;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    width: 80%;
+    height: 2.5em;
+    background: #201f1f;
+    border-radius: 16px;
+    margin-bottom: 2em;
+
+    input {
+        flex-grow: 1;
+        height: 100%;
+        color: white;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 1em;
+    }
+}
