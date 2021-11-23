@@ -1,17 +1,20 @@
 import dayjs from "dayjs"
+import { useState } from "react"
 import AddItem from "../../components/AddItem"
 import DDLItem from "../../components/DDLItem"
+import { DDL } from "../../model/DDL"
+import { DDLService } from "../../util/service"
 import './MainPage.scss'
 
-const ddls = [
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-]
 
 
 export function MainPage() {
+
+    const [ddls, setDDLs] = useState<DDL[]>(DDLService.getDDLs())
+
+    const refreshDDLs = () => {
+        setDDLs(DDLService.getDDLs())
+    }
 
     return (
         <div className="div-main">
@@ -21,10 +24,22 @@ export function MainPage() {
             </div>
             <div className="ddls">
                 {ddls.map((ddl) => {
-                    return <DDLItem item={ddl} />
+                    return ddl.active ?
+                        <DDLItem
+                            item={ddl}
+                            onClickComplete={() => {
+                                DDLService.compeleteDDL(ddl.id)
+                                refreshDDLs();
+                            }} /> :
+                        null
                 })}
             </div>
-            <AddItem />
+            <AddItem
+                onClickAdd={(ddl: DDL) => {
+                    DDLService.addDDL(ddl)
+                    refreshDDLs();
+                }}
+            />
         </div>
     )
 }
