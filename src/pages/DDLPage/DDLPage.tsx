@@ -1,14 +1,10 @@
 import dayjs from 'dayjs'
 import AddItem from '../../components/AddItem'
 import DDLItem from '../../components/DDLItem'
+import { DDL } from '../../model/DDL'
 import './DDLPage.scss'
 
-const ddls = [
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-    { description: "123", time: dayjs() },
-]
+const ddls: DDL[] = []
 
 
 export function DDLPage() {
