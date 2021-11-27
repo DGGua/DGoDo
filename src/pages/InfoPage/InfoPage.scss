@@ -1,0 +1,14 @@
+.div-info {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #00000055;
+    .content {
+        width: 80%;
+        height: 80%;
+        background-color: white;
+    }
+}
