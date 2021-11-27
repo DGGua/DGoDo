@@ -10,16 +10,13 @@
         width: 100%;
         margin-top: 123px;
         margin-left: 100px;
-
         img {
-            text-align:start;
+            text-align: start;
         }
-
         p {
             text-align: left;
             font-size: 42px;
         }
-
         #hi {
             color: white;
         }
@@ -27,7 +24,6 @@
             color: #46e8ca;
         }
     }
-
     .choice {
         width: 100%;
         padding: 0;
@@ -50,5 +46,11 @@
             border-left: 10px solid #57ddc5;
         }
         margin: 50px 0 200px 0;
+    }
+    .btns {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
 }

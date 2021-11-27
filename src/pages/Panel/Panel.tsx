@@ -23,6 +23,10 @@ export function Panel(props: any) {
                     }
                 )}
             </ul>
+            <div className="btns">
+                <button className="version" onClick={() => { props.setShow(1) }}>版本历史</button>
+                <button className="todo" onClick={() => { props.setShow(2) }}>已规划内容</button>
+            </div>
         </div >
     )
 }
