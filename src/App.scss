@@ -1,4 +1,3 @@
-
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -35,13 +34,28 @@
 }
 
 .App {
-    background-image: url("./static/background.png");
+    .img-logo {
+        position: fixed;
+        opacity: 10%;
+    }
+    .img-logo#ld {
+        left: -15vw;
+        width: 30vw;
+        bottom: 0;
+    }
+    .img-logo#ru {
+        right: -15vw;
+        width: 30vw;
+        top: -15vw;
+    }
+    /* background-image: url("./static/background.png"); */
     background-repeat: no-repeat;
     overflow: hidden;
     height: 100vh;
     width: 100vw;
     background-color: black;
 }
+
 p {
     margin: 0;
 }
