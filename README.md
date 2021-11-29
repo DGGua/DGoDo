@@ -1,56 +1,67 @@
 # DGoDo - 一款基于Web的TODO系统
 
-⚠开发中
+⚠开发中⚠功能不完善⚠
 
-一个小练手，自用(主要是mstodo太神奇了，在后台占用内存很大)
+一个小练手，自用(主要是mstodo太神奇了，在后台消耗资源很大)
 
 计划技术栈：
-Mysql + React + AntDesign
+
+后端：Go + Gin + Mysql (目前未实现，以localStorage暂时存储)
+
+前端： React + AntDesign (目前未接入AntDesign)
 
 
-# Getting Started with Create React App
+# QuickStart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 直接使用
 
-## Available Scripts
+欢迎访问[我的网站](http://big.dggua.top/)直接访问应用
 
-In the project directory, you can run:
+## 本地部署
 
-### `yarn start`
+1. 安装[nodejs](https://nodejs.org/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. 安装yarn：
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    ```shell
+    npm install -g yarn
+    ```
 
-### `yarn test`
+3. 安装依赖：
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```shell
+    yarn install
+    ```
 
-### `yarn build`
+4. 运行
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    + 部署：
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        ```shell
+        yarn global add serve
+        serve -s -p 80 build
+        ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    + debug模式（默认运行端口3000）
 
-### `yarn eject`
+        ```shell
+        yarn start
+        ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# 开发目标
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+构建一个**云同步**、基于WEB的**多端**TODO应用。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 功能
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+主要内容分为两类：TODO & 日程。
 
-## Learn More
++ TODO：在设定日程之前需要完成
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
++ 日程：在设定日程前（基本）不需要做（大量）工作，只需在设定日期后开始工作
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 帮助我！
+
+本项目初心为个人锻炼项目，联系本人React及Go的能力。同时尝试接受AntDesign及Gin等新的框架。
+
+非常欢迎大家为这个项目提出自己的意见和建议！囿于个人经历有限，更新可能会非常缓慢，欢迎大家Fork或提issue！
