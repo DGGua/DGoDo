@@ -1,8 +1,10 @@
 import './Panel.scss'
 import triangle from "../../static/triangle.svg"
-const list = ["主页", "DDL", "日程"]
-export function Panel(props: any) {
-
+import { useLocation, useNavigate } from 'react-router'
+const pathlist = ["/", "/ddl", "/item"]
+export function Panel() {
+    const nowpath = useLocation().pathname;
+    const navigate = useNavigate()
     return (
         <div className="div-panel">
             <div className="hiuser">
@@ -12,20 +14,20 @@ export function Panel(props: any) {
             </div>
             <ul className="choice">
 
-                {[0, 1, 2].map(
-                    (index) => {
+                {["主页", "DDL", "日程"].map(
+                    (value, index) => {
                         return <li
-                            id={props.checkout === index ? "checked" : ""}
-                            onClick={() => { props.setCheckout(index) }}
+                            id={nowpath === pathlist[index] ? "checked" : ""}
+                            onClick={() => { navigate(pathlist[index]) }}
                         >
-                            {list[index]}
+                            {value}
                         </li>
                     }
                 )}
             </ul>
             <div className="btns">
-                <button className="version" onClick={() => { props.setShow(1) }}>版本历史</button>
-                <button className="todo" onClick={() => { props.setShow(2) }}>已规划内容</button>
+                <button className="version" onClick={() => { navigate("/docs/history") }}>版本历史</button>
+                <button className="todo" onClick={() => { navigate("/docs/known") }}>已知问题</button>
             </div>
         </div >
     )

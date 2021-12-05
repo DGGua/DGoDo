@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Route, Routes } from 'react-router'
 import { DDLPage } from '../DDLPage/DDLPage'
 import InfoPage from '../InfoPage/InfoPage'
 import { ItemPage } from '../ItemPage/ItemPage'
@@ -7,30 +8,17 @@ import { Panel } from '../Panel/Panel'
 import './Home.scss'
 export function Home() {
 
-    const [checkout, setCheckout] = useState(0)
-    // 0:不显示 1:版本历史 2:已规划
-    const [showInfo, setShowInfo] = useState(0)
-
     return (
         <div className="div-home">
-            <Panel
-                checkout={checkout}
-                setCheckout={setCheckout}
-                setShow={setShowInfo}
-            />
+            <Panel />
             <div className="div-home-other">
-                {(() => {
-                    switch (checkout) {
-                        case 0:
-                            return <MainPage />
-                        case 1:
-                            return <DDLPage />
-                        case 2:
-                            return <ItemPage />
-                    }
-                })()}
+                <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/ddl" element={<DDLPage />} />
+                    <Route path="/item" element={<ItemPage />} />
+                    <Route path="/docs/:name" element={<InfoPage />} />
+                </Routes>
             </div>
-            <InfoPage show={showInfo} setShow={setShowInfo} />
         </div>
 
     )
