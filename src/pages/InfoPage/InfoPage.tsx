@@ -1,43 +1,31 @@
 import "./InfoPage.scss"
 import ReactMarkdown from "react-markdown"
 import { useEffect, useState } from "react"
-import todopath from "../../docs/todo.md"
+import knownpath from "../../docs/todo.md"
 import historypath from "../../docs/versionhistory.md"
+import { Route, Routes, useParams } from "react-router"
 
 export default function InfoPage(props: any) {
-    const [history, setHistory] = useState("")
-    const [todo, setTodo] = useState("")
+    const [file, setFile] = useState("")
+    const name = useParams().name!
+    console.log(name)
+    const filePathMap = new Map([
+        ["known", knownpath],
+        ["history", historypath]
+    ])
 
     useEffect(() => {
-        fetch(historypath)
+        fetch(filePathMap.get(name))
             .then((resp) => resp.text())
-            .then((txt) => { setHistory(txt); console.log(txt) });
-    }, [history]);
-
-    useEffect(() => {
-        fetch(todopath)
-            .then((resp) => resp.text())
-            .then((txt) => setTodo(txt));
-    }, [todo]);
-
+            .then((txt) => { setFile(txt); });
+    }, [name]);
 
     return (
-        <div className="div-info" style={{ display: props.show > 0 ? "flex" : "none" }}>
-            <div className="content">
-                <button className="close" onClick={() => { props.setShow(0) }}>关闭</button>
-                <ReactMarkdown>
-                    {(() => {
-                        switch (props.show) {
-                            case 1:
-                                return history;
-                            case 2:
-                                return todo;
-                            default:
-                                return "# unknown error"
-                        }
-                    })()}
-                </ReactMarkdown>
-            </div>
+        <div className="div-doc">
+            <ReactMarkdown>
+                {file}
+            </ReactMarkdown>
         </div>
     )
+
 }
