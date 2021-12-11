@@ -1,23 +1,21 @@
 import "./InfoPage.scss"
 import ReactMarkdown from "react-markdown"
 import { useEffect, useState } from "react"
-import knownpath from "../../docs/todo.md"
-import historypath from "../../docs/versionhistory.md"
+
+import { service } from "../../service/service"
 import { Route, Routes, useParams } from "react-router"
 
 export default function InfoPage(props: any) {
     const [file, setFile] = useState("")
     const name = useParams().name!
-    console.log(name)
     const filePathMap = new Map([
-        ["known", knownpath],
-        ["history", historypath]
+        ["known", service.docs.getTodoFile],
+        ["history", service.docs.getHistoryFile]
     ])
 
     useEffect(() => {
-        fetch(filePathMap.get(name))
-            .then((resp) => resp.text())
-            .then((txt) => { setFile(txt); });
+        filePathMap.get(name)!()
+            .then((resp) => setFile(resp.data))
     }, [name]);
 
     return (
