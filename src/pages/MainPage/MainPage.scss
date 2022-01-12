@@ -14,6 +14,7 @@
             font-weight: 400;
             font-style: italic;
             color: #201f1f;
+            user-select: none;
         }
         #chi {
             margin: 0;
@@ -24,9 +25,11 @@
             font-style: italic;
             color: #46e8ca;
             margin-top: -40px;
+            user-select: none;
         }
     }
     .ddls {
         flex-grow: 1;
+        overflow-x: auto;
     }
 }
