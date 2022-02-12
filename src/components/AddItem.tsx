@@ -2,8 +2,9 @@ import './AddItem.scss'
 import inputcircle from "../static/inputcircle.svg"
 import inputconfirm from "../static/inputconfirm.svg"
 import { useState } from 'react'
-import { DDL } from '../model/DDL'
 import dayjs from 'dayjs'
+import { DDLService } from '../util/service'
+import { DDL } from '../model/DDL'
 export default function AddItem(props: any) {
 
     const [content, setContent] = useState("")
@@ -14,7 +15,14 @@ export default function AddItem(props: any) {
     }
 
     const onClickAdd = () => {
-        props.onClickAdd(new DDL(content, dayjs().add(dayAfter, 'd')))
+        let ddls = DDLService.getDDLs();
+        const ddl: DDL = {
+            id: (ddls.pop()?.id ?? 0) + 1,
+            content,
+            time: dayjs().add(dayAfter, 'd'),
+        }
+
+        props.onClickAdd(ddl)
         setContent("")
     }
 

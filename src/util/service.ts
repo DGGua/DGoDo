@@ -10,7 +10,6 @@ export const DDLService = {
 function getDDLs(): DDL[] {
 
     let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
-    console.log(DDLs)
     return DDLs;
 }
 

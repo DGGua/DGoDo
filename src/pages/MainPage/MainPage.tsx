@@ -23,16 +23,15 @@ export function MainPage() {
                 <p id="chi">我的</p>
             </div>
             <div className="ddls">
-                {ddls.map((ddl) => {
-                    return ddl.active ?
-                        <DDLItem
-                            item={ddl}
-                            onClickComplete={() => {
-                                DDLService.compeleteDDL(ddl.id)
-                                refreshDDLs();
-                            }} /> :
-                        null
-                })}
+                {ddls.map((ddl) => ddl.active !== false ?
+                    <DDLItem
+                        item={ddl}
+                        onClickComplete={() => {
+                            DDLService.compeleteDDL(ddl.id)
+                            refreshDDLs();
+                        }} /> :
+                    null
+                )}
             </div>
             <AddItem
                 onClickAdd={(ddl: DDL) => {
