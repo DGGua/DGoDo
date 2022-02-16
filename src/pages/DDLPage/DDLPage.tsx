@@ -1,6 +1,3 @@
-import dayjs from 'dayjs'
-import AddItem from '../../components/AddItem'
-import DDLItem from '../../components/DDLItem'
 import { DDL } from '../../model/DDL'
 import './DDLPage.scss'
 
@@ -16,10 +13,9 @@ export function DDLPage() {
             </div>
             <div className="ddls">
                 {ddls.map((ddl) => {
-                    return <DDLItem item={ddl} />
+                    return <div>{ddl.content}</div>
                 })}
             </div>
-            <AddItem />
         </div>
     )
 }

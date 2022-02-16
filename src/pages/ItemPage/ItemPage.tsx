@@ -11,7 +11,7 @@ export function ItemPage() {
         <div className="div-itempage">
             <Header />
             <Calendar />
-            <AddItem />
+            {/* <AddItem /> */}
         </div>
     )
 }

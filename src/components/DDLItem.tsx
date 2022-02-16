@@ -3,13 +3,14 @@ import circle from '../static/circle.svg'
 import dots from '../static/dots.svg'
 import { DDL } from '../model/DDL'
 import dayjs from 'dayjs'
-export default function DDLItem(props: any) {
 
-    const item: DDL = props.item
-    const onClickComplete = () => {
-        console.log(item)
-        props.onClickComplete()
-    }
+interface DDLItemProps {
+    item: DDL,
+    onClickComplete: () => void
+}
+
+export default function DDLItem(props: DDLItemProps) {
+    const { item, onClickComplete } = props
     return (
         <div className="div-ddlitem">
             <img src={circle} onClick={onClickComplete} alt=""></img>

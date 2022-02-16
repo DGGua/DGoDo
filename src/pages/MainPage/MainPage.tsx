@@ -16,6 +16,11 @@ export function MainPage() {
         setDDLs(DDLService.getDDLs())
     }
 
+    const onAddItem = (ddl: DDL) => {
+        DDLService.addDDL(ddl)
+        refreshDDLs();
+    }
+
     return (
         <div className="div-main">
             <div className="header">
@@ -34,10 +39,7 @@ export function MainPage() {
                 )}
             </div>
             <AddItem
-                onClickAdd={(ddl: DDL) => {
-                    DDLService.addDDL(ddl)
-                    refreshDDLs();
-                }}
+                onAddItem={onAddItem}
             />
         </div>
     )

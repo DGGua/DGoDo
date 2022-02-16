@@ -5,8 +5,13 @@ import { useState } from 'react'
 import dayjs from 'dayjs'
 import { DDLService } from '../util/service'
 import { DDL } from '../model/DDL'
-export default function AddItem(props: any) {
 
+interface AddItemProps {
+    onAddItem: (ddl: DDL) => void
+}
+
+export default function AddItem(props: AddItemProps) {
+    const { onAddItem } = props
     const [content, setContent] = useState("")
     const [dayAfter, setDayAfter] = useState(0)
     // handle the day change
@@ -22,7 +27,7 @@ export default function AddItem(props: any) {
             time: dayjs().add(dayAfter, 'd'),
         }
 
-        props.onClickAdd(ddl)
+        onAddItem(ddl)
         setContent("")
     }
 
