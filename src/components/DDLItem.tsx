@@ -1,4 +1,4 @@
-import './DDLItem.scss'
+import './scss/DDLItem.scss'
 import circle from '../static/circle.svg'
 import dots from '../static/dots.svg'
 import { DDL } from '../model/DDL'

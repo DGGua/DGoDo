@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router'
-import { DDLPage } from '../DDLPage/DDLPage'
-import InfoPage from '../InfoPage/InfoPage'
-import { ItemPage } from '../ItemPage/ItemPage'
-import { MainPage } from '../MainPage//MainPage'
-import { Panel } from '../Panel/Panel'
-import './Home.scss'
+import { DDLPage } from './DDLPage'
+import InfoPage from './InfoPage'
+import { ItemPage } from './ItemPage'
+import { MainPage } from './MainPage'
+import { Panel } from './Panel'
+import './scss/Home.scss'
 export function Home() {
 
     return (

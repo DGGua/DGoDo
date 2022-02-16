@@ -1,10 +1,10 @@
 import dayjs from "dayjs"
 import { useState } from "react"
-import AddItem from "../../components/AddItem"
-import DDLItem from "../../components/DDLItem"
-import { DDL } from "../../model/DDL"
-import { DDLService } from "../../util/service"
-import './MainPage.scss'
+import AddItem from "../components/AddItem"
+import DDLItem from "../components/DDLItem"
+import { DDL } from "../model/DDL"
+import { DDLService } from "../util/service"
+import './scss/MainPage.scss'
 
 
 

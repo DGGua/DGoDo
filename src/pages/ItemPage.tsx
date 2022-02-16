@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
-import AddItem from "../../components/AddItem";
-import generateCalendar from "../../util/generrateCalendar"
-import left from "../../static/leftarrow.svg"
-import right from "../../static/rightarrow.svg"
-import './ItemPage.scss'
+import AddItem from "../components/AddItem";
+import generateCalendar from "../util/generrateCalendar"
+import left from "../static/leftarrow.svg"
+import right from "../static/rightarrow.svg"
+import './scss/ItemPage.scss'
 export function ItemPage() {
 
 

@@ -1,4 +1,4 @@
-import './AddItem.scss'
+import './scss/AddItem.scss'
 import inputcircle from "../static/inputcircle.svg"
 import inputconfirm from "../static/inputconfirm.svg"
 import { useState } from 'react'

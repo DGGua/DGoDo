@@ -1,5 +1,5 @@
-import { DDL } from '../../model/DDL'
-import './DDLPage.scss'
+import { DDL } from '../model/DDL'
+import './scss/DDLPage.scss'
 
 const ddls: DDL[] = []
 
