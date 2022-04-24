@@ -1,5 +1,7 @@
 import { Dayjs } from "dayjs";
 import { DDL } from "../model/DDL";
+import { hxservice } from '../service/hxservice'
+
 
 export const DDLService = {
     getDDLs: getDDLs,
@@ -7,9 +9,16 @@ export const DDLService = {
     compeleteDDL: compeleteDDL
 }
 
+
+let data:string
+hxservice.task.taskGet().then(response => {
+    data = response.data
+})   //从后端获取数据
+
 function getDDLs(): DDL[] {
 
-    let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
+    // let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
+    let DDLs = JSON.parse(data ?? "[]")
     return DDLs;
 }
 
