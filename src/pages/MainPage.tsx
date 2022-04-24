@@ -13,7 +13,7 @@ export function MainPage() {
     const [ddls, setDDLs] = useState<DDL[]>(DDLService.getDDLs())
 
     const refreshDDLs = () => {
-        setDDLs(DDLService.getDDLs())
+        setDDLs(DDLService.getDDLs())   //前端重新渲染
     }
 
     const onAddItem = (ddl: DDL) => {
@@ -32,7 +32,7 @@ export function MainPage() {
                     <DDLItem
                         item={ddl}
                         onClickComplete={() => {
-                            DDLService.compeleteDDL(ddl.id)
+                            DDLService.compeleteDDL(ddl.id)   //对应DDLactive属性变为false
                             refreshDDLs();
                         }} /> :
                     null

@@ -27,7 +27,7 @@ export default function AddItem(props: AddItemProps) {
             time: dayjs().add(dayAfter, 'd'),
         }
 
-        onAddItem(ddl)
+        onAddItem(ddl)   //父组件MainPage的onAddItem函数传入
         setContent("")
     }
 
