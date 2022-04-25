@@ -9,18 +9,17 @@ export const DDLService = {
     // compeleteDDL: compeleteDDL
 }
 
-
-let data:string
-hxservice.task.taskGet().then(response => {
-    data = response.data
-})   //从后端获取数据
-
-function getDDLs(){
+async function getDDLs() {
 
     // let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
-    console.log(data)
-    let DDLs = data && JSON.parse(data)
-    return DDLs;
+    let DDLs
+    let response = await hxservice.task.taskGet()
+
+    console.log(response.data.Data)
+    DDLs = response.data.Data && JSON.parse(response.data.Data)
+    //从后端获取数据
+
+    return DDLs
 }
 
 // function setDDLs(DDLs: DDL[]) {
@@ -32,7 +31,7 @@ function addDDL(aDDL: DDL) {
     // DDLs.push(aDDL)
     // setDDLs(DDLs)
     const content = aDDL.content
-    const time:string = aDDL.time.toString() 
+    const time: string = aDDL.time.toString()
     hxservice.task.taskCreate(content, time)
 
 }
