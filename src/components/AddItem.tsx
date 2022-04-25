@@ -21,6 +21,7 @@ export default function AddItem(props: AddItemProps) {
 
     const onClickAdd = () => {
         let ddls = DDLService.getDDLs();
+        console.log("press")
         const ddl: DDL = {
             id: (ddls.pop()?.id ?? 0) + 1,
             content,

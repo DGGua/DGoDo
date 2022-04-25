@@ -28,11 +28,11 @@ export function MainPage() {
                 <p id="chi">我的</p>
             </div>
             <div className="ddls">
-                {ddls.map((ddl) => ddl.active !== false ?
+                {ddls && ddls.map((ddl) => ddl.active !== false ?
                     <DDLItem
                         item={ddl}
                         onClickComplete={() => {
-                            DDLService.compeleteDDL(ddl.id)   //对应DDLactive属性变为false
+                            // DDLService.compeleteDDL(ddl.id)   //对应DDLactive属性变为false
                             refreshDDLs();
                         }} /> :
                     null
