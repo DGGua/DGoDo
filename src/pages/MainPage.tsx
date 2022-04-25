@@ -9,11 +9,12 @@ import './scss/MainPage.scss'
 
 
 export function MainPage() {
+    DDLService.getDDLs()
 
-    const [ddls, setDDLs] = useState<DDL[]>(DDLService.getDDLs())
+    const [ddls, setDDLs] = useState<DDL[]>()
 
     const refreshDDLs = () => {
-        setDDLs(DDLService.getDDLs())   //前端重新渲染
+        // setDDLs(DDLService.getDDLs())   //前端重新渲染
     }
 
     const onAddItem = (ddl: DDL) => {

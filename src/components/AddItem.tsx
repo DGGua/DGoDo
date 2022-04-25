@@ -23,7 +23,8 @@ export default function AddItem(props: AddItemProps) {
         let ddls = DDLService.getDDLs();
         console.log("press")
         const ddl: DDL = {
-            id: (ddls.pop()?.id ?? 0) + 1,
+            // id: (ddls.pop()?.id ?? 0) + 1,
+            id:1,
             content,
             time: dayjs().add(dayAfter, 'd'),
         }
