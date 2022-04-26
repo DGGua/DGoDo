@@ -24,8 +24,11 @@ interface Task {
 const baseUrl = "http://127.0.0.1:4523/mock/468343";
 
 export const DDLService = {
+    getTasks: getTasks,
+    addTask: addTask,
+    completeTask: completeTask,
     getDDLs: getDDLs,
-    addDDL: addDDL,
+    getDates: getDates,
     // compeleteDDL: compeleteDDL
 };
 
@@ -57,6 +60,17 @@ const service = {
                 },
             });
         },
+
+        taskDelete: (id: string) => {
+            return axios({
+                baseURL: baseUrl,
+                url: "/task/delete",
+                method: "DELETE",
+                data: {
+                    id: id,
+                }
+            })
+        }
     },
 };
 
@@ -83,7 +97,7 @@ async function getDDLs() {
     return DDLs;
 }
 
-async function getDate() {
+async function getDates() {
     // let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
     let Dates: LocalTask[] = [];
     const tasks = await getTasks()
@@ -100,25 +114,20 @@ async function getDate() {
     return Dates;
 }
 
-// function setDDLs(DDLs: DDL[]) {
-//     localStorage.setItem("DDLs", JSON.stringify(DDLs))
-// }
-
-function addDDL(aDDL: LocalTask) {
+async function addTask(aTask: LocalTask) {
     // let DDLs = getDDLs()
     // DDLs.push(aDDL)
     // setDDLs(DDLs)
-    const content = aDDL.content;
-    const time: string = aDDL.time.toString();
-    service.task.taskCreate(content, time);
+    const content = aTask.content;
+    const time: string = aTask.time.toString();
+    await service.task.taskCreate(content, time);
 }
 
-// function compeleteDDL(id: number) {
-//     let DDLs = getDDLs()
-//     DDLs.forEach(DDL => {
-//         if (DDL.id === id) {
-//             DDL.active = false
-//         }
-//     })
-//     // setDDLs(DDLs);
-// }
+async function completeTask(id: number) {
+    let tasks = await getTasks()
+    tasks.forEach(task => {
+        if (task.id === id) {
+            service.task.taskDelete(id.toString());
+        }
+    })
+}
