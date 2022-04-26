@@ -1,7 +1,7 @@
-import { DDL } from '../model/LocalTask'
+import { LocalTask } from '../model/LocalTask'
 import './scss/DDLPage.scss'
 
-const ddls: DDL[] = []
+const ddls: LocalTask[] = []
 
 
 export function DDLPage() {

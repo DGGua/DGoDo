@@ -1,24 +1,26 @@
 import dayjs from "dayjs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AddItem from "../components/AddItem"
 import DDLItem from "../components/DDLItem"
-import { DDL } from "../model/LocalTask"
-import { DDLService } from "../util/service"
+import { LocalTask } from "../model/LocalTask"
+import { TaskService } from "../util/service"
 import './scss/MainPage.scss'
 
 
 
 export function MainPage() {
-    DDLService.getDDLs()
+    const [ddls, setDDLs] = useState<LocalTask[]>()
 
-    const [ddls, setDDLs] = useState<DDL[]>()
-
-    const refreshDDLs = () => {
-        // setDDLs(DDLService.getDDLs())   //前端重新渲染
+    useEffect(() => {
+        refreshDDLs()
+    }, [])
+    
+    function refreshDDLs(): any {
+        TaskService.getDDLs().then(setDDLs)
     }
-
-    const onAddItem = (ddl: DDL) => {
-        DDLService.addDDL(ddl)
+    
+    const onAddItem = (task: LocalTask, form:number) => {
+        TaskService.addTask(task, form)
         refreshDDLs();
     }
 
@@ -33,7 +35,7 @@ export function MainPage() {
                     <DDLItem
                         item={ddl}
                         onClickComplete={() => {
-                            // DDLService.compeleteDDL(ddl.id)   //对应DDLactive属性变为false
+                            TaskService.completeTask(ddl.id)
                             refreshDDLs();
                         }} /> :
                     null

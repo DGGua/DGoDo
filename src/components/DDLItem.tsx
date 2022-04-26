@@ -1,11 +1,11 @@
 import './scss/DDLItem.scss'
 import circle from '../static/circle.svg'
 import dots from '../static/dots.svg'
-import { DDL } from '../model/LocalTask'
+import { LocalTask } from '../model/LocalTask'
 import dayjs from 'dayjs'
 
 interface DDLItemProps {
-    item: DDL,
+    item: LocalTask,
     onClickComplete: () => void
 }
 

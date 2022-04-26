@@ -23,7 +23,7 @@ interface Task {
 
 const baseUrl = "http://127.0.0.1:4523/mock/468343";
 
-export const DDLService = {
+export const TaskService = {
     getTasks: getTasks,
     addTask: addTask,
     completeTask: completeTask,
@@ -41,10 +41,11 @@ const service = {
         taskCreate: (
             content: string,
             expect_time: string,
+            form: number,
             root_id: string = "",
             text: string = "",
             root_form: number = 0,
-            form: number = 2
+            
         ) => {
             return axios({
                 baseURL: baseUrl,
@@ -77,6 +78,7 @@ const service = {
 async function getTasks() {
     let response = await service.task.taskGet();
     let responseData = response.data.Data;
+    console.log(responseData)
     return responseData
 }
 
@@ -91,7 +93,9 @@ async function getDDLs() {
             content: data.content,
             time: dayjs(data.expect_time)
         }
-        data.form === 2 ? DDLs.push(ddl) : null
+        if (data.form === 2) {
+            DDLs.push(ddl)
+        }
     })
     console.log(DDLs)
     return DDLs;
@@ -108,19 +112,21 @@ async function getDates() {
             content: data.content,
             time: dayjs(data.expect_time)
         }
-        data.form === 1 ? Dates.push(date) : null
+        if (data.form === 2) {
+            Dates.push(date)
+        }
     })
     console.log(Dates)
     return Dates;
 }
 
-async function addTask(aTask: LocalTask) {
+async function addTask(aTask: LocalTask, form:number) {
     // let DDLs = getDDLs()
     // DDLs.push(aDDL)
     // setDDLs(DDLs)
     const content = aTask.content;
     const time: string = aTask.time.toString();
-    await service.task.taskCreate(content, time);
+    await service.task.taskCreate(content, time, form);
 }
 
 async function completeTask(id: number) {
