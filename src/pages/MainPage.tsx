@@ -2,7 +2,7 @@ import dayjs from "dayjs"
 import { useState } from "react"
 import AddItem from "../components/AddItem"
 import DDLItem from "../components/DDLItem"
-import { DDL } from "../model/DDL"
+import { DDL } from "../model/LocalTask"
 import { DDLService } from "../util/service"
 import './scss/MainPage.scss'
 

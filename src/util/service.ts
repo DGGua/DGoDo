@@ -1,7 +1,6 @@
 import dayjs, { Dayjs } from "dayjs";
-import { DDL } from "../model/DDL";
 import axios from "axios";
-import { parse } from "path";
+import {LocalTask} from "../model/LocalTask"
 
 interface ResponseData<T> {
     Status: number;
@@ -69,11 +68,11 @@ async function getTasks() {
 
 async function getDDLs() {
     // let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
-    let DDLs: DDL[] = [];
+    let DDLs: LocalTask[] = [];
     const tasks = await getTasks()
     tasks.map(data => {
         let time
-        const ddl: DDL = {
+        const ddl: LocalTask = {
             id: data.id,
             content: data.content,
             time: dayjs(data.expect_time)
@@ -83,13 +82,14 @@ async function getDDLs() {
     console.log(DDLs)
     return DDLs;
 }
+
 async function getDate() {
     // let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
-    let Dates: DDL[] = [];
+    let Dates: LocalTask[] = [];
     const tasks = await getTasks()
     tasks.map(data => {
         let time
-        const date: DDL = {
+        const date: LocalTask = {
             id: data.id,
             content: data.content,
             time: dayjs(data.expect_time)
@@ -104,7 +104,7 @@ async function getDate() {
 //     localStorage.setItem("DDLs", JSON.stringify(DDLs))
 // }
 
-function addDDL(aDDL: DDL) {
+function addDDL(aDDL: LocalTask) {
     // let DDLs = getDDLs()
     // DDLs.push(aDDL)
     // setDDLs(DDLs)

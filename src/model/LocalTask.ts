@@ -1,6 +1,6 @@
 import { Dayjs } from "dayjs";
 
-export interface DDL {
+export interface LocalTask {
     // DDL 唯一识别 id
     id: number;
     // 内容

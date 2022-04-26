@@ -4,10 +4,10 @@ import inputconfirm from "../static/inputconfirm.svg"
 import { useState } from 'react'
 import dayjs from 'dayjs'
 import { DDLService } from '../util/service'
-import { DDL } from '../model/DDL'
+import { LocalTask } from '../model/LocalTask'
 
 interface AddItemProps {
-    onAddItem: (ddl: DDL) => void
+    onAddItem: (ddl: LocalTask) => void
 }
 
 export default function AddItem(props: AddItemProps) {
@@ -22,7 +22,7 @@ export default function AddItem(props: AddItemProps) {
     const onClickAdd = () => {
         let ddls = DDLService.getDDLs();
         console.log("press")
-        const ddl: DDL = {
+        const ddl: LocalTask = {
             // id: (ddls.pop()?.id ?? 0) + 1,
             id:1,
             content,

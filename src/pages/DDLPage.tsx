@@ -1,4 +1,4 @@
-import { DDL } from '../model/DDL'
+import { DDL } from '../model/LocalTask'
 import './scss/DDLPage.scss'
 
 const ddls: DDL[] = []
