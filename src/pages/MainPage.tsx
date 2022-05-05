@@ -1,23 +1,26 @@
 import dayjs from "dayjs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AddItem from "../components/AddItem"
 import DDLItem from "../components/DDLItem"
-import { DDL } from "../model/DDL"
-import { DDLService } from "../util/service"
+import { LocalTask } from "../model/LocalTask"
+import { TaskService } from "../util/service"
 import './scss/MainPage.scss'
 
 
 
 export function MainPage() {
+    const [ddls, setDDLs] = useState<LocalTask[]>()
 
-    const [ddls, setDDLs] = useState<DDL[]>(DDLService.getDDLs())
-
-    const refreshDDLs = () => {
-        setDDLs(DDLService.getDDLs())
+    useEffect(() => {
+        refreshDDLs()
+    }, [])
+    
+    function refreshDDLs(): any {
+        TaskService.getDDLs().then(setDDLs)
     }
-
-    const onAddItem = (ddl: DDL) => {
-        DDLService.addDDL(ddl)
+    
+    const onAddItem = (task: LocalTask, form:number) => {
+        TaskService.addTask(task, form)
         refreshDDLs();
     }
 
@@ -28,11 +31,11 @@ export function MainPage() {
                 <p id="chi">我的</p>
             </div>
             <div className="ddls">
-                {ddls.map((ddl) => ddl.active !== false ?
+                {ddls && ddls.map((ddl) => ddl.active !== false ?
                     <DDLItem
                         item={ddl}
                         onClickComplete={() => {
-                            DDLService.compeleteDDL(ddl.id)
+                            TaskService.completeTask(ddl.id)
                             refreshDDLs();
                         }} /> :
                     null

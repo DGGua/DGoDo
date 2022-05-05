@@ -35,7 +35,8 @@ function Calendar(props: any) {
 
     return (
         <table>
-            <thead>
+            <thead>  
+                {/* 表头 */}
                 <tr>
                     {
                         ["日", "一", "二", "三", "四", "五", "六"].map((day) => {
@@ -45,6 +46,7 @@ function Calendar(props: any) {
                 </tr>
             </thead>
             <tbody>
+                {/* 表身 */}
                 {
                     calendar.map(week => {
                         return (
@@ -63,6 +65,9 @@ function Calendar(props: any) {
                     })
                 }
             </tbody>
+            <tfoot>
+                {/* 表尾，什么也没有 */}
+            </tfoot>
         </table>
     )
 }
