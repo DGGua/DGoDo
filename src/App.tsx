@@ -1,4 +1,4 @@
-import { Home } from './pages/Home/Home'
+import { Home } from './pages/Home'
 import './App.scss';
 import logo from './static/logo.png'
 

@@ -1,8 +1,8 @@
-import "./InfoPage.scss"
+import "./scss/InfoPage.scss"
 import ReactMarkdown from "react-markdown"
 import { useEffect, useState } from "react"
 
-import { service } from "../../service/service"
+import { service } from "../service/service"
 import { Route, Routes, useParams } from "react-router"
 
 export default function InfoPage(props: any) {
