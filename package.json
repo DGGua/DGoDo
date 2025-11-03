@@ -17,7 +17,7 @@
         "dns-packet": "^5.3.0",
         "glob-parent": "^6.0.2",
         "http-proxy-middleware": "^3.0.5",
-        "immer": "^9.0.7",
+        "immer": "^10.2.0",
         "is-svg": "^4.3.2",
         "json-schema": "^0.4.0",
         "localstorage": "^1.0.1",
