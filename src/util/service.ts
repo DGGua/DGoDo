@@ -1,4 +1,3 @@
-import { Dayjs } from "dayjs";
 import { DDL } from "../model/DDL";
 
 export const DDLService = {
@@ -10,7 +9,6 @@ export const DDLService = {
 function getDDLs(): DDL[] {
 
     let DDLs = JSON.parse(localStorage.getItem("DDLs") ?? "[]")
-    console.log(DDLs)
     return DDLs;
 }
 

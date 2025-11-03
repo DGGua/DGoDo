@@ -1,11 +1,17 @@
-import './AddItem.scss'
+import './scss/AddItem.scss'
 import inputcircle from "../static/inputcircle.svg"
 import inputconfirm from "../static/inputconfirm.svg"
 import { useState } from 'react'
-import { DDL } from '../model/DDL'
 import dayjs from 'dayjs'
-export default function AddItem(props: any) {
+import { DDLService } from '../util/service'
+import { DDL } from '../model/DDL'
 
+interface AddItemProps {
+    onAddItem: (ddl: DDL) => void
+}
+
+export default function AddItem(props: AddItemProps) {
+    const { onAddItem } = props
     const [content, setContent] = useState("")
     const [dayAfter, setDayAfter] = useState(0)
     // handle the day change
@@ -14,14 +20,21 @@ export default function AddItem(props: any) {
     }
 
     const onClickAdd = () => {
-        props.onClickAdd(new DDL(content, dayjs().add(dayAfter, 'd')))
+        let ddls = DDLService.getDDLs();
+        const ddl: DDL = {
+            id: (ddls.pop()?.id ?? 0) + 1,
+            content,
+            time: dayjs().add(dayAfter, 'd'),
+        }
+
+        onAddItem(ddl)
         setContent("")
     }
 
     return (
         <div className="div-additem">
 
-            <img src={inputcircle}></img>
+            <img src={inputcircle} alt="input" />
             <input
                 placeholder="添加你的日程"
                 value={content}
@@ -38,7 +51,7 @@ export default function AddItem(props: any) {
                 <option value={1}>明天</option>
                 <option value={7}>下周</option>
             </select>
-            <img src={inputconfirm}></img>
+            <img src={inputconfirm} alt="confirm" />
 
         </div >
     )

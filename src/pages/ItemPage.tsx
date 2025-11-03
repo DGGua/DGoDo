@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
-import AddItem from "../../components/AddItem";
-import generateCalendar from "../../util/generrateCalendar"
-import left from "../../static/leftarrow.svg"
-import right from "../../static/rightarrow.svg"
-import './ItemPage.scss'
+// AddItem intentionally not used here; keep import commented out or remove
+import generateCalendar from "../util/generrateCalendar"
+import left from "../static/leftarrow.svg"
+import right from "../static/rightarrow.svg"
+import './scss/ItemPage.scss'
 export function ItemPage() {
 
 
@@ -11,7 +11,7 @@ export function ItemPage() {
         <div className="div-itempage">
             <Header />
             <Calendar />
-            <AddItem />
+            {/* <AddItem /> */}
         </div>
     )
 }
@@ -20,11 +20,11 @@ function Header(props: any) {
 
     return (
         <div className="div-header">
-            <img src={left}></img>
+            <img src={left} alt="left" />
 
             <p>{dayjs().format('MMMM') + "."}</p>
 
-            <img src={right}></img>
+            <img src={right} alt="right" />
         </div >
 
     )

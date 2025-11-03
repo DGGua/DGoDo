@@ -1,21 +1,12 @@
-import dayjs, { Dayjs } from "dayjs";
-import { DDLService } from "../util/service";
+import { Dayjs } from "dayjs";
 
-export class DDL {
+export interface DDL {
+    // DDL 唯一识别 id
     id: number;
+    // 内容
     content: string;
+    // 截止时间
     time: Dayjs;
-    active: boolean;
-
-    // 创建一个DDL，id由localStorage已经存储的内容决定
-    constructor(content: string = "", time: Dayjs = dayjs(), active: boolean = true) {
-        let ddls = DDLService.getDDLs();
-        this.id = (ddls.pop()?.id ?? 0) + 1
-        this.content = content;
-        this.time = time;
-        this.active = active;
-    }
-
-
-
+    // 是否仍有效
+    active?: boolean;
 }

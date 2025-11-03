@@ -1,5 +1,5 @@
-import './Panel.scss'
-import triangle from "../../static/triangle.svg"
+import './scss/Panel.scss'
+import triangle from "../static/triangle.svg"
 import { useLocation, useNavigate } from 'react-router'
 const pathlist = ["/", "/ddl", "/item"]
 export function Panel() {
@@ -8,7 +8,7 @@ export function Panel() {
     return (
         <div className="div-panel">
             <div className="hiuser">
-                <img src={triangle}></img>
+                <img src={triangle} alt="triangle" />
                 <p id="hi">Hi,</p>
                 <p id="username">Unier</p>
             </div>
