@@ -3,18 +3,14 @@ import ReactMarkdown from "react-markdown"
 import { useEffect, useState } from "react"
 
 import { service } from "../service/service"
-import { Route, Routes, useParams } from "react-router"
+import { useParams } from "react-router"
 
 export default function InfoPage(props: any) {
     const [file, setFile] = useState("")
     const name = useParams().name!
-    const filePathMap = new Map([
-        ["known", service.docs.getTodoFile],
-        ["history", service.docs.getHistoryFile]
-    ])
-
     useEffect(() => {
-        filePathMap.get(name)!()
+        const fetcher = name === 'known' ? service.docs.getTodoFile : service.docs.getHistoryFile
+        fetcher()
             .then((resp) => setFile(resp.data))
     }, [name]);
 

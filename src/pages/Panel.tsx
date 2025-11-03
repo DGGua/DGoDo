@@ -8,7 +8,7 @@ export function Panel() {
     return (
         <div className="div-panel">
             <div className="hiuser">
-                <img src={triangle}></img>
+                <img src={triangle} alt="triangle" />
                 <p id="hi">Hi,</p>
                 <p id="username">Unier</p>
             </div>

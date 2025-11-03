@@ -1,7 +1,6 @@
 name: CI — Build
 
 on:
-  push:
   pull_request:
 
 jobs:
@@ -11,16 +10,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js and pnpm cache
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
-          cache: 'pnpm'
+          node-version: '18'
 
-      - name: Enable corepack and install pnpm
+      - name: Enable corepack and install/verify pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

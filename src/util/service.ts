@@ -1,4 +1,3 @@
-import { Dayjs } from "dayjs";
 import { DDL } from "../model/DDL";
 
 export const DDLService = {

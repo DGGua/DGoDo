@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import AddItem from "../components/AddItem";
+// AddItem intentionally not used here; keep import commented out or remove
 import generateCalendar from "../util/generrateCalendar"
 import left from "../static/leftarrow.svg"
 import right from "../static/rightarrow.svg"
@@ -20,11 +20,11 @@ function Header(props: any) {
 
     return (
         <div className="div-header">
-            <img src={left}></img>
+            <img src={left} alt="left" />
 
             <p>{dayjs().format('MMMM') + "."}</p>
 
-            <img src={right}></img>
+            <img src={right} alt="right" />
         </div >
 
     )

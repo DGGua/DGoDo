@@ -34,7 +34,7 @@ export default function AddItem(props: AddItemProps) {
     return (
         <div className="div-additem">
 
-            <img src={inputcircle}></img>
+            <img src={inputcircle} alt="input" />
             <input
                 placeholder="添加你的日程"
                 value={content}
@@ -51,7 +51,7 @@ export default function AddItem(props: AddItemProps) {
                 <option value={1}>明天</option>
                 <option value={7}>下周</option>
             </select>
-            <img src={inputconfirm}></img>
+            <img src={inputconfirm} alt="confirm" />
 
         </div >
     )
