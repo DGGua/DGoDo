@@ -102,8 +102,8 @@ importers:
         specifier: ^6.1.11
         version: 6.2.1
       typeorm:
-        specifier: ^0.3.26
-        version: 0.3.26(babel-plugin-macros@3.1.0)(reflect-metadata@0.1.14)
+        specifier: ^0.3.27
+        version: 0.3.27(babel-plugin-macros@3.1.0)(reflect-metadata@0.1.14)
       typescript:
         specifier: ^4.5.2
         version: 4.9.5
@@ -5787,8 +5787,8 @@ packages:
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
-  typeorm@0.3.26:
-    resolution: {integrity: sha512-o2RrBNn3lczx1qv4j+JliVMmtkPSqEGpG0UuZkt9tCfWkoXKu8MZnjvp2GjWPll1SehwemQw6xrbVRhmOglj8Q==}
+  typeorm@0.3.27:
+    resolution: {integrity: sha512-pNV1bn+1n8qEe8tUNsNdD8ejuPcMAg47u2lUGnbsajiNUr3p2Js1XLKQjBMH0yMRMDfdX8T+fIRejFmIwy9x4A==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
@@ -13171,7 +13171,7 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  typeorm@0.3.26(babel-plugin-macros@3.1.0)(reflect-metadata@0.1.14):
+  typeorm@0.3.27(babel-plugin-macros@3.1.0)(reflect-metadata@0.1.14):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
