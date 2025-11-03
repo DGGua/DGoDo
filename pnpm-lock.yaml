@@ -96,8 +96,8 @@ importers:
         specifier: ^1.43.5
         version: 1.93.3
       ssri:
-        specifier: ^8.0.1
-        version: 8.0.1
+        specifier: ^13.0.0
+        version: 13.0.0
       tar:
         specifier: ^6.1.11
         version: 6.2.1
@@ -5442,9 +5442,9 @@ packages:
     resolution: {integrity: sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==}
     engines: {node: '>= 0.6'}
 
-  ssri@8.0.1:
-    resolution: {integrity: sha512-97qShzy1AiyxvPNIkLWoGua7xoQzzPjQ0HAH4B0rWKo7SZ6USuPcrUiAFrws0UH8RrbWmgq3LMTObhPIHbbBeQ==}
-    engines: {node: '>= 8'}
+  ssri@13.0.0:
+    resolution: {integrity: sha512-yizwGBpbCn4YomB2lzhZqrHLJoqFGXihNbib3ozhqF/cIp5ue+xSmOQrjNasEE62hFxsCcg/V/z23t4n8jMEng==}
+    engines: {node: ^20.17.0 || >=22.9.0}
 
   stable@0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
@@ -12753,9 +12753,9 @@ snapshots:
 
   sqlstring@2.3.1: {}
 
-  ssri@8.0.1:
+  ssri@13.0.0:
     dependencies:
-      minipass: 3.3.6
+      minipass: 7.1.2
 
   stable@0.1.8: {}
 
