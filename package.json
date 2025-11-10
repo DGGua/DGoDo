@@ -18,7 +18,7 @@
         "glob-parent": "^6.0.2",
         "http-proxy-middleware": "^3.0.5",
         "immer": "^10.2.0",
-        "is-svg": "^4.3.2",
+        "is-svg": "^6.1.0",
         "json-schema": "^0.4.0",
         "localstorage": "^1.0.1",
         "md": "^0.6.0",
