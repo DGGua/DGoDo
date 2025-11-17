@@ -31,7 +31,7 @@
         "react-router-dom": "^6.0.2",
         "react-scripts": "5.0.1",
         "reflect-metadata": "^0.2.2",
-        "sass": "^1.43.5",
+        "sass": "^1.94.0",
         "ssri": "^13.0.0",
         "tar": "^7.5.2",
         "typeorm": "^0.3.27",
